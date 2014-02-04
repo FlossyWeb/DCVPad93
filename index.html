@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="CONTENT-LANGUAGE" content="French">
+        <link type="image/x-icon" href="visuels/favicon.ico" rel="icon"/>
+        <link type="image/x-icon" href="visuels/favicon.ico" rel="shortcut icon"/>
+        <link rel="apple-touch-icon" href="visuels/idev.favicon.png"/>
+        <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1"/>
+        <!-- <meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes, initial-scale=1"/> -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+		<link rel="apple-touch-startup-image" href="visuels/startup_image.png" />
+		<title>DCVP</title>
+        <script src="jquery_v1.8.3.min.js"></script>
+        <script src="phonegap.js"></script>
+        <script type="text/javascript">		
+			document.addEventListener("deviceready", onDeviceReady, false);
+			function onDeviceReady() {
+				// Gestion des boutons matériels
+				document.addEventListener("backbutton", onBackKeyDown, false);
+				document.addEventListener("menubutton", onMenuKeyDown, false);
+				if(navigator.network.connection.type == Connection.NONE){
+					$("body").empty().append('<img src="no_network.png" onClick="window.location.reload()" />');
+				}
+				else {
+					document.location.href='https://ssl14.ovh.net/~taxibleu/server93/index.php';
+				}
+            }
+			// GESTION DES BOUTONS MATERIEL
+			// Bouton retour
+			function onBackKeyDown() {
+				//history.back();
+				//changePage('#home');
+			}
+			// Bouton menu
+			function onMenuKeyDown() {
+				//changePage('#home');
+			}
+		</script>
+    </head>
+    <body style="margin:0; padding:0;">
+    </body>
+</html>
